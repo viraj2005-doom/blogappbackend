@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%- include('partials/head.ejs') %>
+    <title>Add blog</title>
+</head>
+<body>
+     <%- include('partials/navbar.ejs') %>
+
+    <h2 class="text-center">Create New Blog Post</h2>
+    <div class="container mt-5">
+    <form action="/blog/add" method="POST" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea class="form-control" name="content" id="content" cols="30" rows="10"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control" name="image" id="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    <%- include('partials/script.ejs') %>
+</body>
+</html>
